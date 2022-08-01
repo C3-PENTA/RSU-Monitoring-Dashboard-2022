@@ -1,0 +1,12 @@
+.header {
+  &__logo {
+    cursor: pointer;
+  }
+
+  &__lang {
+    img {
+      display: block;
+      height: 100%;
+    }
+  }
+}
