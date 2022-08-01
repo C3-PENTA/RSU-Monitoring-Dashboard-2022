@@ -1,0 +1,91 @@
+/*
+  RESPONSIVE RULE:
+    https://www.figma.com/file/BzQxPA3yJon13FDhQH1ZI1/%5BBiz%5D-Website-Component?node-id=2711%3A39977
+
+  'Mobile-first' strategy recommended (use @mixin breakpoint).
+
+  How to?
+    Inside each scss file that needs to apply responsive design:
+
+  1️⃣ @import 'assets/scss/material/breakpoints';
+
+  2️⃣ Apply breakpoints as desired:
+      @include breakpoint(tablet|desktop|desktop-xl){
+        ...
+      }
+
+      or
+
+      @include breakpoint-down(mobile|tablet){
+        ...
+      }
+*/
+
+// 640px | 1024px | 1400px (if browser's default font size is 16px)
+$breakpoints-up: (
+  'tablet': '40em',
+  'desktop': '64em',
+  'desktop-xl': '87.5em',
+);
+
+// 639px, 1023px, 1399px
+$breakpoints-down: (
+  'mobile': '39.9375em',
+  'tablet': '63.9375em',
+  'desktop-sm': '87.4375em',
+);
+
+// Mobile-first
+@mixin breakpoint($size) {
+  @media (min-width: map-get($breakpoints-up, $size)) {
+    @content;
+  }
+}
+
+// Desktop-first
+@mixin breakpoint-down($size) {
+  @media (max-width: map-get($breakpoints-down, $size)) {
+    @content;
+  }
+}
+
+// Desktop-first & only applicable on landscape screen.
+@mixin breakpoint-down-landscape($size) {
+  @media (max-width: map-get($breakpoints-down, $size)) and (orientation: landscape) {
+    @content;
+  }
+}
+
+/*
+  =================================================================
+  Additional Info.
+
+  ⭐In media queries, why use em instead of px or rem?
+      https://zellwk.com/blog/media-query-units/
+      https://coder-coder.com/media-query-breakpoints/
+      https://stackoverflow.com/a/22262489
+
+  🤔[TL;DR]:
+    - Support users who changed there browser's default font size.
+    - It'll work for any device whose optimal default font size is not 16px (as well as those that are).
+    - Zoomable in all modern browsers (zoom function built into browser).
+    - Compatible with Safari (*).
+
+  ✨How to calculate the 'em' unit in media queries?
+    px = [em] x [browser’s internal font-size property].
+    
+    eg: 
+      browser’s initial value of font-size: 16px (**)
+      default font-size property in CSS: 32px (html {font-size: 200%;})
+      
+      → 1em = 16px; 87.5em = 87.5 * 16px = 1400px
+  
+  (*):  The em, rem unit in media queries always uses the default font-size in browser settings, and is not affected by any font-size changed by CSS (https://drafts.csswg.org/mediaqueries/#units)
+        EXCEPT for existing bug in WebKit engine - Safari, Chrome for iOS,... (correct me if I'm wrong, DM via WP or MS Team is ok, thx!). 
+  (**): How to change browser's default font size?
+          Firefox: http://mzl.la/1xKrygz
+          Chrome:  https://support.google.com/chrome/answer/96810
+
+  =================================================================
+  Have fun breaking the UI 😂
+*/
