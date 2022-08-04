@@ -1,0 +1,71 @@
+.react-flow {
+  box-shadow: rgb(0 0 0 / 5%) 0px 1px 3px, rgb(0 0 0 / 5%) 0px 10px 15px -5px,
+    rgb(0 0 0 / 4%) 0px 7px 7px -5px;
+
+  &__white-censor {
+    .react-flow__attribution {
+      display: none !important;
+    }
+  }
+
+  &__node {
+    /*
+      Comment the padding & min-height styles below if use diagramDemoData to preview diagram data instead of data from server or 
+      the :has selector is end experimental and modern browsers fully support it. https://caniuse.com/css-has
+    */
+    padding: 5px !important;
+    min-height: 40px;
+
+    width: 90px !important;
+    color: inherit !important;
+    border-radius: 4px !important;
+    border: 1px solid #1a192b;
+
+    &--virus {
+      background: var(--theme-default);
+      animation: blink-purple 1s infinite;
+    }
+
+    span {
+      opacity: 0.7;
+    }
+
+    &:has(span) {
+      padding: 5px !important;
+    }
+  }
+
+  &__icon {
+    display: none;
+    position: absolute;
+    right: -0.45rem;
+    top: -0.45rem;
+
+    width: 0.9rem;
+    height: 0.9rem;
+
+    font-size: 0.6rem;
+    line-height: 0.9rem;
+    font-weight: 900;
+  }
+
+  &__node-customNode {
+    padding: 10px;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  &__edge-straight {
+    &.animated {
+      .react-flow__edge-path {
+        stroke-width: 3 !important;
+        stroke-dashoffset: -6;
+        stroke-dasharray: 8;
+      }
+    }
+
+    .react-flow__edge-path {
+      stroke-width: 2 !important;
+    }
+  }
+}
