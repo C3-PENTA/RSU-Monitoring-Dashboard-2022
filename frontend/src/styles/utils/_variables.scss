@@ -1,0 +1,46 @@
+$theme-primary: #2c3f68 !default;
+$theme-white: #fff;
+
+$app-max-width: 90em;
+
+// Spacing
+$spacer: 1rem !default;
+$spacers: () !default;
+$spacers: map-merge(
+  (
+    0: 0,
+    1: (
+      $spacer * 0.25,
+    ),
+    2: (
+      $spacer * 0.5,
+    ),
+    3: $spacer,
+    4: (
+      $spacer * 1.5,
+    ),
+    5: (
+      $spacer * 3,
+    ),
+    6: (
+      $spacer * 4,
+    ),
+  ),
+  $spacers
+);
+
+$status: (
+  'default': var(--theme-default),
+  'red': var(--theme-red),
+  'green': var(--theme-green),
+  'yellow': var(--theme-yellow),
+  'blue': var(--theme-blue),
+  'red-dark': var(--theme-red-dark),
+  /*
+    Due to an Vite production build issue https://github.com/vitejs/vite/issues/3924 that caused style import in wrong order.
+    So, DO NOT add purple here. Purple must not !important for now.
+    When this issue is fixed, !important is no longer need for all status.
+
+    'purple': var(--theme-purple),  
+  */
+);
