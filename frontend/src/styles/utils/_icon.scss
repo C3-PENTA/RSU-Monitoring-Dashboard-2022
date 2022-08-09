@@ -1,0 +1,15 @@
+.icon {
+  &__stroke {
+    &--red {
+      line,
+      .path {
+        stroke: var(--theme-red-dark) !important;
+      }
+    }
+  }
+
+  &__threshold--exceed {
+    background: var(--theme-red-dark);
+    color: #fff;
+  }
+}

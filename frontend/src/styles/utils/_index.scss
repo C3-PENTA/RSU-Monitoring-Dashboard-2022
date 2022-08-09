@@ -1,0 +1,20 @@
+@forward './variables';
+@forward './theme';
+@forward './spacing';
+@forward './atomic';
+@forward './animation';
+@forward './breakpoints';
+@forward './layout';
+@forward './icon';
+
+.mantine-Button-root {
+  color: inherit;
+}
+
+.mantine-CheckboxGroup-root {
+  .mantine-Group-child {
+    * {
+      cursor: pointer !important;
+    }
+  }
+}
