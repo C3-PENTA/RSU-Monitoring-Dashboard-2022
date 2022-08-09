@@ -1,0 +1,50 @@
+.dash-animated {
+  svg {
+    line,
+    .path {
+      stroke-width: 4 !important;
+      stroke-dasharray: 10;
+      animation: dash 30s linear infinite reverse;
+    }
+  }
+}
+
+.animation-infinite {
+  animation-iteration-count: infinite;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 1000;
+  }
+}
+
+@keyframes blink-purple {
+  0%,
+  100% {
+    background: var(--theme-default);
+  }
+  50% {
+    background: var(--theme-purple);
+  }
+}
+
+@keyframes blink-blue {
+  0%,
+  100% {
+    background: var(--theme-default);
+  }
+  50% {
+    background: var(--theme-blue);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}

@@ -1,0 +1,132 @@
+@use './variables' as *;
+
+.d-flex {
+  display: flex;
+}
+
+.d-none {
+  display: none;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-stretch {
+  justify-content: stretch;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-stretch {
+  align-items: stretch;
+}
+
+.d-flex-center {
+  @extend .d-flex, .justify-center, .align-center;
+}
+
+.d-flex-c-center {
+  @extend .d-flex, .flex-column, .justify-center, .align-center;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.sticky-bot {
+  position: sticky;
+  bottom: 0;
+  z-index: -1;
+}
+
+.absolute-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.text-ellipsis--2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-red {
+  color: var(--theme-red-dark);
+}
+
+.text-green {
+  color: var(--theme-green);
+}
+
+.text--pre-line {
+  white-space: pre-line;
+}
+
+.h100 {
+  height: 100%;
+}
+
+.w100 {
+  width: 100%;
+}
+
+.visibility-hidden {
+  visibility: hidden;
+}
+
+.circle {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+@each $name, $color in $status {
+  .status--#{$name} {
+    background: #{$color} !important;
+  }
+}
+
+.status--purple {
+  background: var(--theme-default);
+}
+
+.shadow--pale {
+  box-shadow: 0px 15px 10px -10px rgb(0 0 0 / 4%);
+}
+
+.shadow--pale-up {
+  box-shadow: 0px -15px 10px -10px rgb(0 0 0 / 4%);
+}
+
+.filter-invert--1 {
+  filter: invert(1);
+}
