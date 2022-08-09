@@ -1,0 +1,6 @@
+@use './variables' as *;
+
+.container {
+  width: min(100%, $app-max-width);
+  margin-inline: auto;
+}
