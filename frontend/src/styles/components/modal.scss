@@ -1,0 +1,35 @@
+.modal-filter {
+  .mantine-Modal-inner {
+    padding: 0;
+    .mantine-Modal-modal {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      width: 100%;
+      background-color: transparent;
+
+      .mantine-Modal-title {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .mantine-Modal-body {
+    flex: 1;
+    width: 30rem;
+    margin-inline: auto;
+  }
+
+  &__form {
+    margin: 5rem 0;
+  }
+
+  &__btn-action {
+    display: flex;
+    justify-content: flex-end;
+
+    .mantine-Button-root {
+      padding: 0 0.2rem;
+    }
+  }
+}
