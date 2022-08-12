@@ -130,3 +130,51 @@ export const handleListEventPagingReq = (
   };
 };
 
+export const handleListEventReqDebounce = (
+  filterValues: IListEventForm,
+  isScrollLoadMore?: boolean,
+): IListEventReq | undefined => {
+  const [startDate, endDate] = filterValues.dateRange;
+
+  if (startDate !== null && endDate === null) {
+    return undefined;
+  }
+
+  return {
+    lastRecordCreatedTime: isScrollLoadMore ? filterValues.lastRecordCreatedTime : undefined,
+    size: paginationConfig.pageSizePool[1],
+    category: filterValues.categoryID.map((c) => Number(c)),
+    keyword: filterValues.keyword.trim().toLowerCase() || undefined,
+    startTime: startDate ? dayjs(startDate).toISOString() : undefined,
+    endTime: endDate ? dayjs(endDate).endOf('day').toISOString() : undefined,
+  };
+};
+
+/**
+ * @param keyword Pre-condition: This string must be normalized.
+ */
+export const isSocketEventValid = (
+  { keyword, category, startTime, endTime }: IListEventReq,
+  eventData?: IListEvent,
+): boolean => {
+  if (!eventData) {
+    return false;
+  }
+
+  const isValidKeyWord = keyword
+    ? checkStrArrIncludeKeyword(keyword, [
+        eventData.sendNode,
+        eventData.receiveNode,
+        eventData.detectionNode,
+      ])
+    : true;
+  const isValidCategory = category.some((categoryID) => categoryID === eventData.category);
+
+  const isValidDateRange =
+    startTime && endTime
+      ? dayjs(startTime).diff(eventData.createdAt, 'day') >= 0 &&
+        dayjs(endTime).diff(eventData.createdAt, 'day') <= 0
+      : true;
+
+  return isValidKeyWord && isValidCategory && isValidDateRange;
+};
