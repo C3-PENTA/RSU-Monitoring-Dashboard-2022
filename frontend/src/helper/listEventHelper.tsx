@@ -111,3 +111,22 @@ export const handleGetValueFromEvent = (data: IListEvent): string => {
   return content.trim().slice(0, -1);
 };
 
+export const handleListEventPagingReq = (
+  filterValues: IListEventForm,
+): IListEventReq | undefined => {
+  const [startDate, endDate] = filterValues.dateRange;
+
+  if (startDate !== null && endDate === null) {
+    return undefined;
+  }
+
+  return {
+    keyword: filterValues.keyword.trim().toLowerCase() || undefined,
+    category: filterValues.categoryID.map(safeAnyToNumber),
+    startTime: startDate ? dayjs(startDate).toISOString() : undefined,
+    endTime: endDate ? dayjs(endDate).endOf('day').toISOString() : undefined,
+    page: filterValues.currentPage || 1,
+    size: filterValues.size || paginationConfig.pageSizePool[0],
+  };
+};
+
