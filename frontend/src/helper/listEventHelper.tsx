@@ -16,3 +16,6 @@ import { TypesOf } from '@/interface/interfaceCommon';
 import { checkStrArrIncludeKeyword } from '@/util/arrayHandle';
 import { safeAnyToNumber } from '@/util/primitiveHandle';
 
+export const getCategoryConfig = (category: TypesOf<IListEvent>) =>
+  categoryConfig.find(({ id }) => id === category);
+
