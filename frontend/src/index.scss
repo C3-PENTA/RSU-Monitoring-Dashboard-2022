@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --theme-default: #464c5a;
+  --theme-red: #c25252;
+  --theme-green: #4cb86a;
+  --theme-yellow: #e2be00;
+  --theme-blue: #56acdd;
+  --theme-purple: #8f61d9;
+  --theme-red-dark: #cc3737;
+  --theme-cyan-dark: #2e3646;
+  --theme-brown: #3f2f3d;
+  --theme-black: #1a1b1e;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 500;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
