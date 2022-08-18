@@ -1,0 +1,22 @@
+# Change below URI when using local BE (ex: 'http://localhost:3001').
+# If you keep using cloud server, you should enable server https via `vite.config.ts` file and disable Chrome CORS to bypass CORS policy on development only. 
+VITE_API_URI='https://backend.datamore.io:3000/api/'
+VITE_API_SOCKET_URI='https://backend.datamore.io:3000/'
+
+VITE_CPU_THRESHOLD=80
+VITE_RAM_THRESHOLD=80
+VITE_NIC_THRESHOLD=90
+
+VITE_FILTER_DEBOUNCE_TIME=400
+
+# Control blinking animation duration (Node exceed threshold or virus detected). Default: 5000 milliseconds.
+VITE_UI_BLINKING_TIMEOUT=5000
+
+# Determine how long the node connection changes its state (Connection → Communication → Disconnect). Default: 1000 milliseconds.
+VITE_UI_CONNECTION_TIMEOUT=1000
+
+# Determine how long the application goes to sleep when the user afk. Default: 1800000 milliseconds = 30 mins.
+VITE_IDLE_TIMEOUT=1800000
+
+# Specify the maximum number of records to be exported to an excel file. Default: 10000 records.
+VITE_EXPORT_RECORDS_LIMIT=10000
