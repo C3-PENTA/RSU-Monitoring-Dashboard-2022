@@ -1,0 +1,95 @@
+{
+  "common": {
+    "loading": "Loading",
+    "theme": {
+      "dark": "Dark mode",
+      "light": "Light mode",
+      "switch": "Toggle color scheme mode"
+    },
+    "home_page": "Homepage",
+    "request_confirm": "Request confirmation",
+    "afk": {
+      "title": "Standby mode",
+      "description": "Switched to standby mode to reduce unnecessary data transmission.\nAre you there? It's been more than {{afkTime}} minutes with no action detected!",
+      "hint": "Hover over this site to reconnect.",
+      "comeback": "Hey, welcome back! Reconnecting"
+    },
+    "date_picker": {
+      "placeholder": "Pick dates range"
+    },
+    "search": "Search",
+    "communication": {
+      "fetching": {
+        "title": "Fetching...",
+        "message": "The system is synthesizing and retrieving data."
+      },
+      "cancel_request": "Operation canceled due to new request."
+    },
+    "pagination": {
+      "info": "{{startIndex}} - {{endIndex}} of {{totalRecords}} records",
+      "page_size": "{{size}}/page"
+    },
+    "success": "Data was loaded.",
+    "error": {
+      "network": {
+        "title": "Network Issue",
+        "message": "Network connection error detected"
+      },
+      "socket": {
+        "title": "Realtime Data Issue",
+        "message": "socket: Cannot connect to server. Close this or refresh page to re-connect."
+      },
+      "virus": {
+        "title": "Virus Detected!",
+        "message": "{{nodeName}} (ID: {{nodeID}}): Detected virus in file {{fileName}}"
+      },
+      "exceed_threshold": {
+        "title": "Exceed Threshold!",
+        "message": "{{nodeName}} (ID: {{nodeID}}): "
+      },
+      "device_notfound": {
+        "title": "Something went wrong!",
+        "message": "socket: Cannot find device that related with event: {{eventID}}"
+      },
+      "sth_wrong": "Something went wrong. Please try again later!"
+    },
+    "not_found": {
+      "description": "Page not found!"
+    }
+  },
+  "dashboard": {
+    "hello_world": "Hello world",
+    "title": "Condition Monitoring Portal",
+    "communication": "Communication",
+    "connection": "Connection",
+    "status": {
+      "stop": "Stop",
+      "driving": "Driving",
+      "turn_around": "Turn around",
+      "pass": "Pass",
+      "exceed": "Exceed threshold",
+      "virus": "Detect virus/Exceed Threshold"
+    }
+  },
+  "list_event": {
+    "title": "List Event",
+    "no_data": "No Data",
+    "category": {
+      "availability_status_tranfer": "Node Availability Status Transfer Event",
+      "virus": "Virus Detection Event",
+      "communication": "Node Communication Event"
+    },
+    "info": {
+      "virus": "File name: {{fileName}}",
+      "communication": "{{detectionNode}} - {{info}}"
+    },
+    "scroll": {
+      "endOfRecords": "No more records."
+    },
+    "export": {
+      "btn_tooltip": "Export data",
+      "file_name": "[Penta]List_events_{{createDate}}",
+      "total": "{{totalRecords}} records"
+    }
+  }
+}
