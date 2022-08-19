@@ -1,0 +1,14 @@
+{
+  "dashboard": {
+    "hello_world": "안녕하세요 세계",
+    "title": "안녕하세요",
+    "list_event": "이벤트 나열",
+    "communication": "Communication",
+    "connection": "Connection"
+  },
+  "common": {
+    "date_picker": {
+      "placeholder": "Pick dates range"
+    }
+  }
+}
