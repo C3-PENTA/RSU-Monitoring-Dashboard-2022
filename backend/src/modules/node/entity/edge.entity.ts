@@ -9,3 +9,4 @@ import {
 } from 'typeorm';
 import { Rsu } from './rsu.entity';
 
+@Entity()
