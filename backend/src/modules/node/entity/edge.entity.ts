@@ -19,5 +19,9 @@ export class Edge {
   @Column()
   name: string;
 
+  @ApiProperty({ type: Rsu, isArray: true })
+  @OneToMany(() => Rsu, (rsu) => rsu.edge)
+  listRsu: Rsu[];
+
   
 }
