@@ -34,5 +34,5 @@ export class Edge {
     default: () => 'now()',
     onUpdate: 'now()',
   })
-  
+  public updatedAt: Date;
 }
