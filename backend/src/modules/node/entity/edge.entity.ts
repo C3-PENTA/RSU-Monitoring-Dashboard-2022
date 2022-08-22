@@ -10,3 +10,10 @@ import {
 import { Rsu } from './rsu.entity';
 
 @Entity()
+export class Edge {
+  @ApiProperty()
+  @PrimaryGeneratedColumn('increment')
+  id: number;
+
+  
+}
