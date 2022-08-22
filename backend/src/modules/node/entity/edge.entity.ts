@@ -15,5 +15,9 @@ export class Edge {
   @PrimaryGeneratedColumn('increment')
   id: number;
 
+  @ApiProperty()
+  @Column()
+  name: string;
+
   
 }
