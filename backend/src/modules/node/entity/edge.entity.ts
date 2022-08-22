@@ -29,5 +29,10 @@ export class Edge {
   })
   public createdAt: Date;
 
+  @UpdateDateColumn({
+    type: 'timestamptz',
+    default: () => 'now()',
+    onUpdate: 'now()',
+  })
   
 }
