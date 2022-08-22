@@ -23,5 +23,11 @@ export class Edge {
   @OneToMany(() => Rsu, (rsu) => rsu.edge)
   listRsu: Rsu[];
 
+  @CreateDateColumn({
+    type: 'timestamptz',
+    default: () => 'now()',
+  })
+  public createdAt: Date;
+
   
 }
