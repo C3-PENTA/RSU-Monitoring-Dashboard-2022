@@ -7,3 +7,5 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
+import { Rsu } from './rsu.entity';
+
