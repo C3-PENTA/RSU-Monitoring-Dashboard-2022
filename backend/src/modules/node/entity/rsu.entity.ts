@@ -37,5 +37,18 @@ export class Rsu {
   @Column()
   rx: number;
 
+  @ApiProperty({ type: Obu, isArray: true })
+  @OneToMany(() => Obu, (opu) => opu.rsu)
+  listObu: Obu[];
+
+  @ManyToOne(() => Edge, (edge) => edge.listRsu)
+  edge: Edge;
+
+  @CreateDateColumn({
+    type: 'timestamptz',
+    default: () => 'now()',
+  })
+  public createdAt: Date;
+
   
 }
