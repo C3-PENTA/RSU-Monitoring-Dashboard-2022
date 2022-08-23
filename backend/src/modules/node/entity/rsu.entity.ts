@@ -50,5 +50,10 @@ export class Rsu {
   })
   public createdAt: Date;
 
-  
+  @UpdateDateColumn({
+    type: 'timestamptz',
+    default: () => 'now()',
+    onUpdate: 'now()',
+  })
+  public updatedAt: Date;
 }
