@@ -23,5 +23,11 @@ export class Obu {
   @ManyToOne(() => Rsu, (rsu) => rsu.listObu)
   rsu: Rsu;
 
+  @CreateDateColumn({
+    type: 'timestamptz',
+    default: () => 'now()',
+  })
+  public createdAt: Date;
+
   
 }
