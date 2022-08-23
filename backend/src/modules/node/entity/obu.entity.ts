@@ -11,3 +11,7 @@ import { Rsu } from './rsu.entity';
 
 
 @Entity()
+export class Obu {
+  @ApiProperty()
+  
+}
