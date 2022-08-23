@@ -17,5 +17,25 @@ export class Rsu {
   @PrimaryGeneratedColumn('increment')
   id: number;
 
+  @ApiProperty()
+  @Column()
+  name: string;
+
+  @ApiProperty()
+  @Column()
+  cpu: number;
+
+  @ApiProperty()
+  @Column()
+  ram: number;
+
+  @ApiProperty()
+  @Column()
+  tx: number;
+
+  @ApiProperty()
+  @Column()
+  rx: number;
+
   
 }
