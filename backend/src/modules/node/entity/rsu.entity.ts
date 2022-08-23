@@ -12,3 +12,10 @@ import { Edge } from './edge.entity';
 import { Obu } from './obu.entity';
 
 @Entity()
+export class Rsu {
+  @ApiProperty()
+  @PrimaryGeneratedColumn('increment')
+  id: number;
+
+  
+}
