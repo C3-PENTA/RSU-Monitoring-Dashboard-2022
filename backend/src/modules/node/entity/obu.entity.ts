@@ -10,3 +10,4 @@ import {
 import { Rsu } from './rsu.entity';
 
 
+@Entity()
