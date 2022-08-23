@@ -29,5 +29,10 @@ export class Obu {
   })
   public createdAt: Date;
 
-  
+  @UpdateDateColumn({
+    type: 'timestamptz',
+    default: () => 'now()',
+    onUpdate: 'now()',
+  })
+  public updatedAt: Date;
 }
