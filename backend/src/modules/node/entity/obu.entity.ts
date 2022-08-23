@@ -16,5 +16,12 @@ export class Obu {
   @PrimaryGeneratedColumn('increment')
   id: number;
 
+  @ApiProperty()
+  @Column()
+  name: string;
+
+  @ManyToOne(() => Rsu, (rsu) => rsu.listObu)
+  rsu: Rsu;
+
   
 }
