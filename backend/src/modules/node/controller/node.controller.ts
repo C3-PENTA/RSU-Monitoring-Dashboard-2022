@@ -4,3 +4,4 @@ import { ListNodeDto } from '../dto/list-node.dto';
 import { EdgeService } from '../service/edge.service';
 
 
+@ApiTags('Node')
