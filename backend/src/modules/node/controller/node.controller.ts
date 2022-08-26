@@ -13,5 +13,12 @@ export class NodeController {
   @ApiOperation({
     description: `<b>Get All Edges, RSUs, OBUs</b>`,
   })
-  
+  @ApiOkResponse({
+    status: 200,
+    description: 'List Nodes',
+    type: ListNodeDto,
+  })
+  getAllNodes() {
+    return this.edgeService.findAll();
+  }
 }
