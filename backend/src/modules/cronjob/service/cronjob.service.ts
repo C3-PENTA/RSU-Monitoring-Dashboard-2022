@@ -4,3 +4,11 @@ import { Cron } from '@nestjs/schedule';
 import * as moment from 'moment-timezone';
 import { EventService } from '../../event/service/event.service';
 
+@Injectable()
+export class CronjobService {
+  private readonly logger = new Logger(CronjobService.name);
+
+  constructor(
+    private eventService: EventService,
+    private configService: ConfigService,
+  ) {}
