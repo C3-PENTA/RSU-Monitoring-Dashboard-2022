@@ -6,3 +6,12 @@ import { EdgeService } from '../service/edge.service';
 
 @ApiTags('Node')
 @Controller('node')
+export class NodeController {
+  constructor(private edgeService: EdgeService) {}
+
+  @Get('list')
+  @ApiOperation({
+    description: `<b>Get All Edges, RSUs, OBUs</b>`,
+  })
+  
+}
