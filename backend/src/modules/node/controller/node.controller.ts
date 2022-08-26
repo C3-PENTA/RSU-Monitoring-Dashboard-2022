@@ -5,3 +5,4 @@ import { EdgeService } from '../service/edge.service';
 
 
 @ApiTags('Node')
+@Controller('node')
