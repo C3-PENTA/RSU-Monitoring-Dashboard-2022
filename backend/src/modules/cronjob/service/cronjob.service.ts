@@ -12,3 +12,7 @@ export class CronjobService {
     private eventService: EventService,
     private configService: ConfigService,
   ) {}
+
+  /**
+   * Job clear "Node Availability Status Transfer" Event 3 months ago
+   */
