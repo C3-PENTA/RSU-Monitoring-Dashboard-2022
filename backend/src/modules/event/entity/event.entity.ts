@@ -8,3 +8,15 @@ import {
 } from 'typeorm';
 import { EventInfo } from '../type/event-info.type';
 
+@Entity()
+export class Event {
+  @ApiProperty()
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
+
+  @ApiProperty()
+  @Column()
+  category: number;
+
+
+}
