@@ -6,3 +6,5 @@ import { QueryLoadMoreEventBodyDto } from '../dto/query-load-more-event-body.dto
 import { EventService } from '../service/event.service';
 import { LoadMoreEventDto } from '../dto/load-more-event.dto';
 
+@ApiTags('Event')
+@Controller('event')
