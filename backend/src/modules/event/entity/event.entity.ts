@@ -55,5 +55,14 @@ export class Event {
   @Column({ default: () => `''` })
   action: string;
 
+  @ApiProperty({ type: EventInfo })
+  @Column('jsonb', { default: () => `'{}'::jsonb` })
+  eventInfo: EventInfo;
+
+  @ApiProperty()
+  @CreateDateColumn({
+    type: 'timestamptz',
+    default: () => 'now()',
+  })
 
 }
