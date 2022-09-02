@@ -14,5 +14,28 @@ export class EventController {
   @Post('search/paging')
   @ApiOperation({
     description: `<b>Search & Get List Event</b> <br><br>
-      Category: 1 - Node Availability Status Transfer Event, 2 - Virus Detection Event, 3 - Node 
+      Category: 1 - Node Availability Status Transfer Event, 2 - Virus Detection Event, 3 - Node Communication Event`,
+  })
+  @ApiOkResponse({
+    status: 200,
+    description: 'List Event Response',
+    type: PaginationEventDto,
+  })
+  listEventPaging(@Body() query: QueryPagingEventBodyDto) {
+    return this.eventService.findAllPaging(query);
+  }
+
+  @Post('search/load-more')
+  @ApiOperation({
+    description: `<b>Search Load More & Get List Event</b> <br><br>
+      Category: 1 - Node Availability Status Transfer Event, 2 - Virus Detection Event, 3 - Node Communication Event`,
+  })
+  @ApiOkResponse({
+    status: 200,
+    description: 'List Event Response',
+    type: LoadMoreEventDto,
+  })
+  listEventLoadMore(@Body() query: QueryLoadMoreEventBodyDto) {
+    return this.eventService.findAllLoadMore(query);
+  }
 }
