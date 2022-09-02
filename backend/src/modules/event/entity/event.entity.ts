@@ -39,5 +39,21 @@ export class Event {
   @Column({ default: () => `''` })
   detectionNode: string;
 
+  @ApiProperty()
+  @Column({ default: () => `''` })
+  eventType: string;
+
+  @ApiProperty()
+  @Column({ default: () => `''` })
+  status: string;
+
+  @ApiProperty()
+  @Column({ default: () => `''` })
+  request: string;
+
+  @ApiProperty()
+  @Column({ default: () => `''` })
+  action: string;
+
 
 }
