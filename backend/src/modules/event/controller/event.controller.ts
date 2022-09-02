@@ -8,3 +8,11 @@ import { LoadMoreEventDto } from '../dto/load-more-event.dto';
 
 @ApiTags('Event')
 @Controller('event')
+export class EventController {
+  constructor(private eventService: EventService) {}
+
+  @Post('search/paging')
+  @ApiOperation({
+    description: `<b>Search & Get List Event</b> <br><br>
+      Category: 1 - Node Availability Status Transfer Event, 2 - Virus Detection Event, 3 - Node 
+}
