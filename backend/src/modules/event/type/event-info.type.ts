@@ -11,4 +11,7 @@ export class EventInfo {
   @ApiProperty()
   nic: NIC;
 
+  @ApiProperty()
+  fileName: string;
+
 }
