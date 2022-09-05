@@ -14,4 +14,6 @@ export class EventInfo {
   @ApiProperty()
   fileName: string;
 
+  @ApiProperty()
+  info: string;
 }
