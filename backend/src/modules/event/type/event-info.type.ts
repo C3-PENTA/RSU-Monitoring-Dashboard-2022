@@ -8,4 +8,7 @@ export class EventInfo {
   @ApiProperty()
   ram: number;
 
+  @ApiProperty()
+  nic: NIC;
+
 }
