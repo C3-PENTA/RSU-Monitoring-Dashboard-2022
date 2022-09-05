@@ -5,4 +5,7 @@ export class EventInfo {
   @ApiProperty()
   cpu: number;
 
+  @ApiProperty()
+  ram: number;
+
 }
