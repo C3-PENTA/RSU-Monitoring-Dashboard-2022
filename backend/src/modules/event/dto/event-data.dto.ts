@@ -8,5 +8,11 @@ export class EventDataDto {
   @ApiProperty()
   sendNode: string;
 
+  @ApiProperty()
+  receiveNode: string;
+
+  @ApiProperty()
+  detectionNode: string;
+
   
 }
