@@ -5,5 +5,8 @@ export class EventDataDto {
   @ApiProperty()
   category: number;
 
+  @ApiProperty()
+  sendNode: string;
+
   
 }
