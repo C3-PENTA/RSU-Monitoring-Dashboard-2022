@@ -5,5 +5,8 @@ export class PaginationEventDto {
   @ApiProperty()
   totalRecords: number;
 
+  @ApiProperty()
+  totalPages: number;
+
 
 }
