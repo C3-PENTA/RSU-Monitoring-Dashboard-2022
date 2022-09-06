@@ -23,5 +23,6 @@ export class EventDataDto {
   @ApiProperty()
   action: string;
 
-  
+  @ApiProperty()
+  eventInfo: EventInfo;
 }
