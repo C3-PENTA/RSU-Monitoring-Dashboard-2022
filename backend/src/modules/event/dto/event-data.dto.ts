@@ -14,5 +14,8 @@ export class EventDataDto {
   @ApiProperty()
   detectionNode: string;
 
+  @ApiProperty()
+  status: string;
+
   
 }
