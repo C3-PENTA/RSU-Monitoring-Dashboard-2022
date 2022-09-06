@@ -11,4 +11,6 @@ export class PaginationEventDto {
   @ApiProperty()
   currentPage: number;
 
+  @ApiProperty({ type: Event, isArray: true })
+  listEvent: Event[];
 }
