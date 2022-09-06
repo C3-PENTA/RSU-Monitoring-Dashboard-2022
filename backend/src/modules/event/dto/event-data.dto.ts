@@ -17,5 +17,8 @@ export class EventDataDto {
   @ApiProperty()
   status: string;
 
+  @ApiProperty()
+  request: string;
+
   
 }
