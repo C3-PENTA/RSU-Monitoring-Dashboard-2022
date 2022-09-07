@@ -8,5 +8,7 @@ export class QueryLoadMoreEventBodyDto extends QuerySearchEventBodyDto {
   @Min(1)
   size: number;
 
+  @ApiPropertyOptional()
+  @IsDateString()
 
 }
