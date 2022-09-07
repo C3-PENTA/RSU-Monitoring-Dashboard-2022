@@ -10,5 +10,7 @@ export class QuerySearchEventBodyDto {
   @IsNumber({}, { each: true })
   category: number[];
 
+  @ApiPropertyOptional()
+  @IsString()
 
 }
