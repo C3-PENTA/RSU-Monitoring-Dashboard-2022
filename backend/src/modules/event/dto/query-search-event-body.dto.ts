@@ -20,5 +20,7 @@ export class QuerySearchEventBodyDto {
   @IsOptional()
   startTime: string;
 
+  @ApiPropertyOptional()
+  @IsDateString()
 
 }
