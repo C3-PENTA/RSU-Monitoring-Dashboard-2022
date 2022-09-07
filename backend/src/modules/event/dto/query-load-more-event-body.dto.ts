@@ -5,5 +5,8 @@ import { QuerySearchEventBodyDto } from './query-search-event-body.dto';
 export class QueryLoadMoreEventBodyDto extends QuerySearchEventBodyDto {
   @ApiProperty()
   @IsNumber()
+  @Min(1)
+  size: number;
+
 
 }
