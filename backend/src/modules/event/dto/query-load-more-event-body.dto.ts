@@ -10,5 +10,6 @@ export class QueryLoadMoreEventBodyDto extends QuerySearchEventBodyDto {
 
   @ApiPropertyOptional()
   @IsDateString()
-
+  @IsOptional()
+  lastRecordCreatedTime: string;
 }
