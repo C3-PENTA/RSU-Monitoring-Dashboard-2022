@@ -15,5 +15,7 @@ export class QuerySearchEventBodyDto {
   @IsOptional()
   keyword: string;
 
+  @ApiPropertyOptional()
+  @IsDateString()
 
 }
