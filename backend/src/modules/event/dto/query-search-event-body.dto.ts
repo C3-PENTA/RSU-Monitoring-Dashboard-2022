@@ -12,5 +12,8 @@ export class QuerySearchEventBodyDto {
 
   @ApiPropertyOptional()
   @IsString()
+  @IsOptional()
+  keyword: string;
+
 
 }
