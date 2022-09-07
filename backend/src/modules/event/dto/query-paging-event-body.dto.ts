@@ -10,5 +10,6 @@ export class QueryPagingEventBodyDto extends QuerySearchEventBodyDto {
 
   @ApiProperty()
   @IsNumber()
-
+  @Min(1)
+  size: number;
 }
