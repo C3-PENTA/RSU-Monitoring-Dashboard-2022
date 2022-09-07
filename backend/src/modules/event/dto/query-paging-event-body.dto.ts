@@ -5,5 +5,8 @@ import { QuerySearchEventBodyDto } from './query-search-event-body.dto';
 export class QueryPagingEventBodyDto extends QuerySearchEventBodyDto {
   @ApiProperty()
   @IsNumber()
+  @Min(1)
+  page: number;
+
 
 }
