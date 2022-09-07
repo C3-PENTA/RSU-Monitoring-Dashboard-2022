@@ -7,5 +7,8 @@ export class QuerySearchEventBodyDto {
     description:
       '1 - Node Availability Status Transfer Event, 2 - Virus Detection Event, 3 - Node Communication Event',
   })
+  @IsNumber({}, { each: true })
+  category: number[];
+
 
 }
