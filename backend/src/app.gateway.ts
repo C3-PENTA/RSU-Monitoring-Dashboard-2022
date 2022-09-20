@@ -36,41 +36,7 @@ export class AppGateway
 
   private logger: Logger = new Logger('AppGateway');
 
-  /**
-   * Handle receive message from RSU, OBU & Send event to dashboard FE
-   * @param {Socket} client
-   * @param {EventDataDto} payload
-   */
-  @SubscribeMessage('event_to_server')
-  async handleMessage(client: Socket, payload: EventDataDto): Promise<void> {
-    const event = await this.eventService.create(payload);
-    if (
-      event.category === CategoryEnum.Node_Availability_Status_Transfer_Event
-    ) {
-      const cpuThreshold = this.configService.get<number>('CPU_THRESHOLD');
-      const ramThreshold = this.configService.get<number>('RAM_THRESHOLD');
-      const nicThreshold = this.configService.get<number>('NIC_THRESHOLD');
 
-      if (
-        event.eventInfo.cpu >= cpuThreshold ||
-        event.eventInfo.ram >= ramThreshold ||
-        event.eventInfo.nic.tx / event.eventInfo.nic.rx >= nicThreshold
-      ) {
-        await this._sendEventToClientWithDetectionNodeId(event);
-      }
-    } else if (event.category === CategoryEnum.Virus_Detection_Event) {
-      await this._sendEventToClientWithDetectionNodeId(event);
-    } else {
-      this.server.emit('event_to_client', event);
-    }
-
-    if (payload.category === CategoryEnum.Node_Communication_Event) {
-      setTimeout(() => {
-        const node = payload.receiveNode.toLowerCase().replace(' ', '_');
-        this.server.emit(`event_to_${node}`, payload);
-      }, 2000);
-    }
-  }
 
   /**
    * Handle after init socket
