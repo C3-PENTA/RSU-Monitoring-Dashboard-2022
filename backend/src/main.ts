@@ -26,3 +26,20 @@ async function bootstrap() {
 
   app.setGlobalPrefix('api');
 
+  app.useGlobalPipes(
+    new ValidationPipe({
+      transform: true,
+      whitelist: true,
+    }),
+  );
+
+  const options = new DocumentBuilder()
+    .setTitle('Penta Security')
+    .setDescription('Penta Security Swagger API Document')
+    .setVersion('1.0')
+    .build();
+  const document = SwaggerModule.createDocument(app, options);
+  SwaggerModule.setup('api/docs', app, document);
+
+  await app.listen(Number(process.env.APP_PORT) || 3000);
+}
