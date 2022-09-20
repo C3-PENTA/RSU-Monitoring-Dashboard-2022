@@ -13,7 +13,6 @@ async function bootstrap() {
       cert: fs.readFileSync('./gmoseapp.csr'),
     };
   }
-
   const app = await NestFactory.create<NestExpressApplication>(AppModule, {
     httpsOptions,
   });
