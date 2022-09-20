@@ -14,6 +14,14 @@ import { CronjobModule } from './modules/cronjob/cronjob.module';
       isGlobal: true,
       envFilePath: ['.env'],
     }),
-
+    TypeOrmModule.forRootAsync({
+      useClass: TypeOrmConfigService,
+    }),
+    ScheduleModule.forRoot(),
+    CronjobModule,
+    NodeModule,
+    EventModule,
+  ],
+  providers: [AppGateway],
 })
 export class AppModule {}
