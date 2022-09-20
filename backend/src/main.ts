@@ -43,3 +43,4 @@ async function bootstrap() {
 
   await app.listen(Number(process.env.APP_PORT) || 3000);
 }
+void bootstrap();
