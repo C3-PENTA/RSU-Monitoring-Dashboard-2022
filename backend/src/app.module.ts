@@ -25,3 +25,4 @@ import { CronjobModule } from './modules/cronjob/cronjob.module';
   providers: [AppGateway],
 })
 
+export class AppModule {}
