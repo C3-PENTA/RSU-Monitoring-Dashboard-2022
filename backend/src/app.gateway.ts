@@ -88,6 +88,26 @@ export class AppGateway
     this.logger.log(`Client disconnected: ${client.id}`);
   }
 
+  /**
+   * Handle client connection
+   * @param {Socket} client
+   * @param {any[]} args
+   */
+  handleConnection(client: Socket, ...args: any[]) {
+    this.logger.log(`Client connected: ${client.id}`);
+  }
 
+  /**
+   * Send event to Dashboard FE with addition detectionNodeId
+   * @param {Event} event
+   */
+  async _sendEventToClientWithDetectionNodeId(event: Event) {
+    const rsu = await this.rsuService.findOne({
+      name: event.detectionNode,
+    });
+    this.server.emit('event_to_client', {
+      ...event,
+      detectionNodeId: rsu.id,
+    });
   }
 }
