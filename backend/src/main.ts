@@ -24,3 +24,5 @@ async function bootstrap() {
     preflightContinue: false,
   });
 
+  app.setGlobalPrefix('api');
+
