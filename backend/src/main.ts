@@ -18,4 +18,9 @@ async function bootstrap() {
     httpsOptions,
   });
 
-  
+  app.enableCors({
+    origin: process.env.FE_URL ? process.env.FE_URL.split(',') : '*',
+    credentials: true,
+    preflightContinue: false,
+  });
+
