@@ -72,6 +72,22 @@ export class AppGateway
     }
   }
 
+  /**
+   * Handle after init socket
+   * @param {Server} server
+   */
+  afterInit(server: Server) {
+    this.logger.log('Init');
+  }
+
+  /**
+   * Handle disconnect
+   * @param {Socket} client
+   */
+  handleDisconnect(client: Socket) {
+    this.logger.log(`Client disconnected: ${client.id}`);
+  }
+
 
   }
 }
