@@ -9,3 +9,6 @@ import {
 import { Logger } from '@nestjs/common';
 import { Socket, Server } from 'socket.io';
 import { EventService } from './modules/event/service/event.service';
+import { ConfigService } from '@nestjs/config';
+import { CategoryEnum } from './modules/event/enum/category.enum';
+import { EventDataDto } from './modules/event/dto/event-data.dto';
